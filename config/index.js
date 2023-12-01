@@ -1,8 +1,12 @@
-require('dotenv').config({path: __dirname + '/../.env'})
+require('dotenv').config({
+    path: __dirname + '/../.env'
+})
 
 module.exports = {
-  node_env: process.env.NODE_ENV || 'production',
-  api_path: process.env.API_PATH || '/api',
-  api_port: process.env.API_PORT || 3000,
-  db_url: process.env.DATABASE_URL || '',
+    api_port: process.env.API_PORT || 5000,
+    host: process.env.HOST || '',
+    port: process.env.PORT || '',
+    user: process.env.USER || '',
+    password: process.env.PASSWORD || '',
+    database: process.env.DATABASE || '',
 }

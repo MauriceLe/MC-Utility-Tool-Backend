@@ -8,18 +8,16 @@ const routes = require('./routes')
 const app = express()
 
 app.set('sequelize', models.sequelize)
- 
+
 app.use(express.json())
 app.use(cors({ origin: true, credentials: true }))
 
 app.use(routes)
 
 app.get('sequelize').sync().then(async () => {
-  console.log("Database " + config.db_url + " connected")
-  
-  app.listen(config.api_port, async() => {
-    console.log('Backend listening on: http://localhost:' + config.api_port)
-  }) 
+  console.log("Database connected")
 })
 
-// npm install cors sequelize dotenv tedious
+app.listen(config.api_port, async() => {
+  console.log('Backend listening on: http://localhost:' + config.api_port)
+}) 
