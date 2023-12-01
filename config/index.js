@@ -4,6 +4,7 @@ require('dotenv').config({
 
 module.exports = {
     api_port: process.env.API_PORT || 5000,
+    secret: process.env.SECRET_KEY || '',
     host: process.env.HOST || '',
     port: process.env.PORT || '',
     user: process.env.USER || '',
